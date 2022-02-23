@@ -5,7 +5,13 @@ import ListItem from './components/ListItem';
 export default function App() {
   return (
     <View style={styles.container}>
-      <ListItem />
+      <ListItem
+        imageUrl="https://picsum.photos/id/10/200/200"
+        author="SampleNews"
+        title="Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation"
+      />
     </View>
   );
 }
