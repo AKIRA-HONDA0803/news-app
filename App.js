@@ -1,9 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
+import React, {useState} from 'react';
 import { StyleSheet, View, FlatList, SafeAreaView } from 'react-native';
 import ListItem from './components/ListItem';
-import articles from './dummies/articles';
+import dummyArticles from './dummies/articles';
 
 export default function App() {
+  const [articles, setArticles] = useState(dummyArticles)
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
