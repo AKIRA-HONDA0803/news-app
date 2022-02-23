@@ -1,13 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import ListItem from './components/ListItem';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.itemContainer}>
-        <View style={styles.leftContainer}/>
-        <View style={styles.rightContainer}/>
-      </View>
+      <ListItem />
     </View>
   );
 }
@@ -27,11 +25,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   leftContainer: {
-    backgroundColor: "red",
     width: 100,
   },
   rightContainer: {
-    backgroundColor: "blue",
     flex: 1,
+    padding: 10,
+    justifyContent: "space-between",
+  },
+  text: {
+    fontSize: 16
+  },
+  subText: {
+    fontSize: 12,
+    color: "gray"
   }
 });
