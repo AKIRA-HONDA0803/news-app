@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, View, FlatList, SafeAreaView } from 'react-native';
+import { StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import ListItem from '../components/ListItem';
 import Constants from 'expo-constants';
 import axios from 'axios';
@@ -7,7 +7,7 @@ import axios from 'axios';
 const URL = `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${Constants.manifest.extra.newsApiKey}`
 
 
-export default function HomeScreen() {
+export default function HomeScreen ({navigation}) {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     fetchArticles();
@@ -31,6 +31,7 @@ export default function HomeScreen() {
           imageUrl={item.urlToImage}
           title={item.title}
           author={item.author}
+          onPress={() => navigation.navigate("Article")}
           />
         )}
         keyExtractor={(item, index) => index.toString()}
